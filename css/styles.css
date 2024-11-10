@@ -140,7 +140,8 @@ button {
 
 button:hover {
     cursor: pointer;
-    background-image: linear-gradient(to right, var(--color-logo-pink) , var(--color-logo-orange));;
+    background-image: linear-gradient(to right, var(--color-logo-pink) , var(--color-logo-orange));
+    box-shadow: 0 8px 15px var(--color-tomato);
 }
 
 input:focus {
