@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* GLOBALS */
+:root {
+    --color-tomato: hsl(4, 100%, 67%);
+    --color-dark-slate-gray: hsl(234, 29%, 20%);
+    --color-charcoal: hsl(235, 18%, 26%);
+    --color-grey: hsl(231, 7%, 60%);
+    --color-grey-light: hsla(231, 7%, 60%, 0.5);
+    --color-white: hsl(0, 0%, 100%);
+
+    --color-logo-pink: #FF527B;
+    --color-logo-orange: #FF6A3A;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-charcoal);
+}
+
+/* CARD LAYOUT */
+.card {
+    display: flex;
+    background-color: var(--color-white);
+    border-radius: 40px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.card__text, .card__image {
+    display: flex;
+    flex-direction: column;
+    width: 465px;
+    height: 640px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__text {
+    padding: 90px 24px 100px 65px;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.card__image {
+    background: url(../images/illustration-sign-up-desktop.svg) no-repeat;
+    background-position: center;
+    padding-left: 10px;
+}
+
+form { margin-top: 10px; }
+
+/* CARD TYPING */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+}
+
+li:before {
+    content: url('../images/icon-list.svg');
+    margin-right: 16px;
+    margin-top: 6px;
+}
+
+h1, p, li, button, label {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
+p, li, button, label { color: var(--color-charcoal); }
+
+h1 {
+    color: var(--color-dark-slate-gray);
+    font-size: 57px;
+}
+
+p, input {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+p { line-height: 1.5; }
+
+/* FORM */
+form, input, button {
+    width: 100%;
+}
+
+label, .error-message {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#div__label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+input {
+    border: 1px solid var(--color-grey-light);
+    border-radius: 10px;
+    padding: 17px 25px;
+    margin-top: 10px;
+}
+
+.error-message {
+    color: tomato;
+    width: auto;
+}
+
+button {
+    background-color: var(--color-dark-slate-gray);
+    color: var(--color-white);
+    padding: 20px;
+    margin-top: 20px;
+    
+    border: 0;
+    border-radius: 10px;
+
+    text-align: center;
+    font-size: 15.5px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-image: linear-gradient(to right, var(--color-logo-pink) , var(--color-logo-orange));;
+}
+
+input:focus {
+    outline: 1px solid var(--color-charcoal);
+}
+
+/* SUCCESS MESSAGE */
+.success__card {
+    display: none;
+    flex-direction: column;
+
+    width: 500px;
+    height: 520px;
+    padding: 50px 65px 65px 65px;
+
+    background-color: var(--color-white);
+    border-radius: 40px;
+
+    justify-content: space-between;
+}
+
+.success__message > * {
+    margin-bottom: 30px;
+}
+
+.success__card > button {
+    margin-top: 0;
+}
+
+.success__card h1 {
+    margin-top: 10px;
+    line-height: 1.0;
+}
+
+#success__email { font-weight: 700; }
+
+.success__card img { width: 64px; }
+
+/* FOR MOBILE */
+@media screen and (max-width: 970px) {
+    
+    /* FORM CARD LAYOUT */
+    body { align-items: start; }
+
+    .card {
+        flex-direction: column;
+        width: 375px;
+        border-radius: 0px;
+    }
+
+    .card__text {
+        order: 2;
+        width: 375px;
+        height: 560px;
+        padding: 50px 25px;
+    }
+
+    .card__image, .card__image img {
+        justify-content: start;
+        width: 375px;
+        padding: 0;
+    }
+
+    .card__image {
+        background: url(../images/illustration-sign-up-mobile.svg) no-repeat;
+        height: 284px;
+    }
+
+    /* TYPING */
+    h1 { font-size: 40px; }
+
+    li {
+        align-items: start;
+        margin-bottom: 10px;
+    }
+
+    li::before { margin-top: 0; }
+
+    /* SUCCESS CARD LAYOUT */
+    .success__card {
+        width: 375px;
+        height: 100vh;
+        border-radius: 0px;
+        padding: 75px 25px 45px 25px;
+    }
+}
